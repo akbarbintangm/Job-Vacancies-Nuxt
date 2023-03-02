@@ -27,6 +27,7 @@ module.exports = {
     apiKey: process.env.API_KEY,
   },
   mode: "spa",
+  ssr: "false",
   router: {
     base: "/",
     linkExactActiveClass: "active"
