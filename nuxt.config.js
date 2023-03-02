@@ -39,12 +39,12 @@ module.exports = {
     description: false,
     viewport: false,
     charset: false,
-   },
+  },
   /*
    ** Headers of the page
    */
   head: {
-    title: "Nuxt Argon Dashboard Laravel by Creative Tim & UPDIVISION",
+    title: "Job Vacancy (Test Demo)",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -52,21 +52,21 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "Nuxt Argon Dashboard Laravel comes with an API-powered Laravel backend, a Nuxt frontend and an awesome-looking Argon design."
+          ""
       },
       {
         name: "keywords",
         content:
-          "creative tim, updivision, html dashboard, nuxt, laravel, vue, vuejs, json:api, json, api, html css dashboard laravel, nuxt argon dashboard laravel, nuxt argon dashboard, argon admin, nuxt dashboard, nuxt admin, web dashboard, bootstrap 4 dashboard laravel, bootstrap 4, css3 dashboard, bootstrap 4 admin laravel, argon dashboard bootstrap 4 laravel, frontend, responsive bootstrap 4 dashboard, argon dashboard, argon laravel bootstrap 4 dashboard"
+          ""
       },
       {
         itemprop: "name",
-        content: "Nuxt Argon Dashboard Laravel by Creative Tim & UPDIVISION"
+        content: "Job Vacancy (Test Demo)"
       },
       {
         itemprop: "description",
         content:
-          "Nuxt Argon Dashboard Laravel comes with an API-powered Laravel backend, a Nuxt frontend and an awesome-looking Argon design."
+          ""
       },
       {
         itemprop: "image",
@@ -83,12 +83,12 @@ module.exports = {
       },
       {
         name: "twitter:title",
-        content: "Nuxt Argon Dashboard Laravel by Creative Tim & UPDIVISION"
+        content: "Job Vacancy (Test Demo)"
       },
       {
         name: "twitter:description",
         content:
-          "Nuxt Argon Dashboard Laravel comes with an API-powered Laravel backend, a Nuxt frontend and an awesome-looking Argon design."
+          ""
       },
       {
         name: "twitter:creator",
@@ -105,7 +105,7 @@ module.exports = {
       },
       {
         property: "og:title",
-        content: "Nuxt Argon Dashboard Laravel by Creative Tim & UPDIVISION"
+        content: "Job Vacancy (Test Demo)"
       },
       {
         property: "og:type",
@@ -124,7 +124,7 @@ module.exports = {
       {
         property: "og:description",
         content:
-          "Nuxt Argon Dashboard Laravel comes with an API-powered Laravel backend, a Nuxt frontend and an awesome-looking Argon design."
+          ""
       },
       {
         property: "og:site_name",
