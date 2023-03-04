@@ -1,18 +1,18 @@
 # Vector Maps
 
-We created a custom component based on  
+We created a custom component based on
 
 <hr>
 
 ## Initialization
 
-Import the `WorldMap` component 
+Import the `WorldMap` component
 
 ```js
-import WorldMap from '@/components/argon-core/WorldMap/WorldMap.vue';
+import WorldMap from '@/components/argon-core/WorldMap/WorldMap.vue'
 export default {
   components: {
-    WorldMap
+    WorldMap,
   },
 }
 ```
@@ -20,21 +20,20 @@ export default {
 ### Basic example
 
 :::demo
+
 ```html
 <template>
-   <world-map class="vector-map"
-              :map-data="mapData">
-   </world-map>
+  <world-map class="vector-map" :map-data="mapData"> </world-map>
 </template>
 
 <script>
-import WorldMap from '@/components/argon-core/WorldMap/WorldMap.vue';
-export default {
-  name: 'map-card',
-  components: {
-    WorldMap
-  },
-  data() {
+  import WorldMap from '@/components/argon-core/WorldMap/WorldMap.vue'
+  export default {
+    name: 'map-card',
+    components: {
+      WorldMap,
+    },
+    data() {
       return {
         mapData: {
           AUS: 760,
@@ -47,36 +46,34 @@ export default {
           IND: 200,
           ROU: 600,
           RUS: 757,
-          USA: 1800
-        }
+          USA: 1800,
+        },
       }
-    }
-  };
+    },
+  }
 </script>
 ```
+
 :::
-
-
 
 ### Points (dots) on the map
 
 :::demo
+
 ```html
 <template>
-   <world-map class="vector-map"
-              :map-data="mapData"
-              :points="points">
-   </world-map>
+  <world-map class="vector-map" :map-data="mapData" :points="points">
+  </world-map>
 </template>
 
 <script>
-import WorldMap from '@/components/argon-core/WorldMap/WorldMap.vue';
-export default {
-  name: 'map-card',
-  components: {
-    WorldMap
-  },
-  data() {
+  import WorldMap from '@/components/argon-core/WorldMap/WorldMap.vue'
+  export default {
+    name: 'map-card',
+    components: {
+      WorldMap,
+    },
+    data() {
       return {
         mapData: {
           AUS: 760,
@@ -89,7 +86,7 @@ export default {
           IND: 200,
           ROU: 600,
           RUS: 757,
-          USA: 1800
+          USA: 1800,
         },
         points: [
           {
@@ -115,13 +112,14 @@ export default {
           {
             name: 'Romania',
             centered: 'ROU',
-          }
-        ]
+          },
+        ],
       }
-    }
-  };
+    },
+  }
 </script>
 ```
+
 :::
 
 <script>

@@ -7,6 +7,7 @@ Toggle contextual overlays for displaying lists of links and more with the Boots
 ### Examples
 
 :::demo
+
 ```html
 <div>
   <base-dropdown>
@@ -39,6 +40,7 @@ Toggle contextual overlays for displaying lists of links and more with the Boots
     </base-dropddown>
 </div>
 ```
+
 :::
 
 ### Colors
@@ -46,70 +48,76 @@ Toggle contextual overlays for displaying lists of links and more with the Boots
 The best part is you can do this with any button variant, too:
 
 :::demo
+
 ```html
 <div>
   <base-dropdown>
     <base-button slot="title-container" type="primary" class="dropdown-toggle">
       Primary
     </base-button>
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-    </base-dropdown>
-    <base-dropdown>
-      <base-button slot="title-container" type="secondary" class="dropdown-toggle">
-        Secondary
-      </base-button>
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </base-dropdown>
-    <base-dropdown>
-        <base-button slot="title-container" type="success" class="dropdown-toggle">
-          Success
-        </base-button>
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-    </base-dropdown>
-    <base-dropdown>
-      <base-button slot="title-container" type="info" class="dropdown-toggle">
-        Info
-      </base-button>
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </base-dropdown>
-    <base-dropdown>
-        <base-button slot="title-container" type="warning" class="dropdown-toggle">
-          Warning
-        </base-button>
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-    </base-dropdown>
-    <base-dropdown>
-      <base-button slot="title-container" type="danger" class="dropdown-toggle">
-        Danger
-      </base-button>
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </base-dropdown>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </base-dropdown>
+  <base-dropdown>
+    <base-button
+      slot="title-container"
+      type="secondary"
+      class="dropdown-toggle"
+    >
+      Secondary
+    </base-button>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </base-dropdown>
+  <base-dropdown>
+    <base-button slot="title-container" type="success" class="dropdown-toggle">
+      Success
+    </base-button>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </base-dropdown>
+  <base-dropdown>
+    <base-button slot="title-container" type="info" class="dropdown-toggle">
+      Info
+    </base-button>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </base-dropdown>
+  <base-dropdown>
+    <base-button slot="title-container" type="warning" class="dropdown-toggle">
+      Warning
+    </base-button>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </base-dropdown>
+  <base-dropdown>
+    <base-button slot="title-container" type="danger" class="dropdown-toggle">
+      Danger
+    </base-button>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </base-dropdown>
 </div>
 ```
+
 :::
 
 ### Props

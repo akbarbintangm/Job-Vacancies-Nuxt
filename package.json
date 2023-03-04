@@ -1,27 +1,32 @@
 {
-  "name": "nuxt-argon-dashboard-pro",
-  "version": "1.0.0",
-  "description": "Nuxt version of the Vue Argon Dashboard Pro",
-  "author": "Creative Tim",
+  "name": "job-vacancy-management",
+  "version": "0.5.3",
+  "description": "Job Vacancy Management",
+  "author": "Creative Tim, DIVISION, Akbar Bintang M",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:prettier",
+    "prettier": "prettier --write --list-different .",
+    "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix"
   },
   "dependencies": {
     "@fullcalendar/core": "^4.0.2",
     "@fullcalendar/daygrid": "^4.0.1",
     "@fullcalendar/interaction": "^4.0.2",
     "@fullcalendar/timegrid": "^4.0.1",
-    "@fullcalendar/vue": "^4.0.2-beta",
+    "@fullcalendar/vue": "^4.0.2",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.1",
-    "@nuxtjs/pwa": "^3.0.0-beta.19",
+    "@nuxtjs/pwa": "^3.0.0",
     "@nuxtjs/toast": "^3.3.1",
     "@reststate/vuex": "^0.2.2",
-    "bootstrap": "4.3.1",
+    "bootstrap": "^4.6.2",
     "chart.js": "^2.9.3",
     "d3": "^5.7.0",
     "datamaps": "^0.5.9",
@@ -53,11 +58,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/eslint-parser": "^7.19.1",
+    "@nuxtjs/eslint-config": "^11.0.0",
+    "@nuxtjs/eslint-module": "^3.1.0",
+    "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.0",
-    "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27928371.c30fa0f",
     "cross-env": "^5.2.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-vue": "^9.9.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
-    "sass-loader": "^7.1.0"
+    "prettier": "^2.8.4",
+    "sass-loader": "^10.1.1"
   }
 }

@@ -2,22 +2,22 @@
   <div :id="id" class="world-map"></div>
 </template>
 <script>
-import 'd3';
-import * as d3 from 'd3';
-import 'topojson';
-import { throttle } from '@/util/throttle';
+import 'd3'
+import * as d3 from 'd3'
+import 'topojson'
+import { throttle } from '@/util/throttle'
 
 export default {
   name: 'world-map',
   props: {
     mapData: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     points: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -28,41 +28,41 @@ export default {
       borderColor: 'white',
       highlightBorderColor: 'white',
       bubbleHighlightFillColor: '#11cdef',
-      bubbleFillColor: '#fb6340'
-    };
+      bubbleFillColor: '#fb6340',
+    }
   },
   methods: {
     generateColors(length) {
       return d3
         .scaleLinear()
         .domain([0, length])
-        .range([this.color1, this.color2]);
+        .range([this.color1, this.color2])
     },
     generateMapColors() {
-      let mapDataValues = Object.values(this.mapData);
-      let maxVal = Math.max(...mapDataValues);
-      let colors = this.generateColors(maxVal);
-      let mapData = {};
+      let mapDataValues = Object.values(this.mapData)
+      let maxVal = Math.max(...mapDataValues)
+      let colors = this.generateColors(maxVal)
+      let mapData = {}
       let fills = {
-        defaultFill: '#EDF0F2'
-      };
+        defaultFill: '#EDF0F2',
+      }
       for (let key in this.mapData) {
-        let val = this.mapData[key];
-        fills[key] = colors(val);
+        let val = this.mapData[key]
+        fills[key] = colors(val)
         mapData[key] = {
           fillKey: key,
-          value: val
-        };
+          value: val,
+        }
       }
       return {
         mapData,
-        fills
-      };
+        fills,
+      }
     },
     async initVectorMap() {
-      let DataMap = await import('datamaps');
+      let DataMap = await import('datamaps')
       DataMap = DataMap.default || DataMap
-      let { fills, mapData } = this.generateMapColors();
+      let { fills, mapData } = this.generateMapColors()
       let worldMap = new DataMap({
         scope: 'world',
         element: document.getElementById(this.id),
@@ -76,9 +76,9 @@ export default {
           highlightFillColor: this.highlightFillColor,
           highlightBorderColor: this.highlightBorderColor,
           highlightBorderWidth: 1,
-          highlightBorderOpacity: 1
-        }
-      });
+          highlightBorderOpacity: 1,
+        },
+      })
       let bubbleOptions = {
         radius: 2,
         borderWidth: 4,
@@ -87,41 +87,41 @@ export default {
         fillColor: this.bubbleFillColor,
         borderColor: this.bubbleFillColor,
         highlightFillColor: this.bubbleHighlightFillColor,
-        highlightBorderColor: this.bubbleHighlightFillColor
+        highlightBorderColor: this.bubbleHighlightFillColor,
       }
-      let bubblePoints = this.points.map(point => {
+      let bubblePoints = this.points.map((point) => {
         return {
           ...bubbleOptions,
-          ...point
+          ...point,
         }
       })
       worldMap.bubbles(bubblePoints, {
-        popupTemplate: function(geo, data) {
+        popupTemplate: function (geo, data) {
           return '<div class="hoverinfo">' + data.name
-        }
-      });
-      let resizeFunc = worldMap.resize.bind(worldMap);
+        },
+      })
+      let resizeFunc = worldMap.resize.bind(worldMap)
       window.addEventListener(
         'resize',
         () => {
-          throttle(resizeFunc, 40);
+          throttle(resizeFunc, 40)
         },
         false
-      );
+      )
     },
     randomString() {
-      let text = "";
-      let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+      let text = ''
+      let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
       for (let i = 0; i < 5; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
+        text += possible.charAt(Math.floor(Math.random() * possible.length))
 
-      return text;
-    }
+      return text
+    },
   },
   async mounted() {
-    this.initVectorMap();
-  }
-};
+    this.initVectorMap()
+  },
+}
 </script>
 <style></style>

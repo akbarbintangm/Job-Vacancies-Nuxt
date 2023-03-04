@@ -1,9 +1,8 @@
-$box-shadow: 0 10px 20px -8px rgba(0,0,0,.15);
-$border-color: rgba(0,0,0,.05);
+$box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.15);
+$border-color: rgba(0, 0, 0, 0.05);
 $orange: #fb6340;
 .theme-container {
-
-  .fc-view-container table{
+  .fc-view-container table {
     display: table !important;
     .fc-view-container thead tr,
     .fc-content-skeleton tbody tr {
@@ -28,7 +27,9 @@ $orange: #fb6340;
     font-size: 14px !important;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     padding-left: 1.25rem;
     border-left: 2px solid #5e72e4;
     padding-top: 12px !important;
@@ -38,11 +39,10 @@ $orange: #fb6340;
       opacity: 0;
     }
   }
-
 }
 
 .sidebar-wrapper-docs,
-.demo-block{
+.demo-block {
   position: relative;
   .sidenav {
     position: relative;

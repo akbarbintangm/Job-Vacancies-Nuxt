@@ -27,87 +27,87 @@
 </template>
 
 <script>
-import { Tag } from 'element-ui';
+import { Tag } from 'element-ui'
 
 export default {
   name: 'tags-input',
   components: {
-    [Tag.name]: Tag
+    [Tag.name]: Tag,
   },
   props: {
     value: {
       type: Array,
       default: () => [],
-      description: 'List of tags'
+      description: 'List of tags',
     },
     tagType: {
       type: String,
       default: 'primary',
-      description: 'Tag type (primary|danger etc)'
-    }
+      description: 'Tag type (primary|danger etc)',
+    },
   },
   model: {
     prop: 'value',
-    event: 'change'
+    event: 'change',
   },
   data() {
     return {
       dynamicTags: [],
       inputVisible: false,
-      inputValue: ''
-    };
+      inputValue: '',
+    }
   },
   methods: {
     handleClose(tag) {
-      this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
-      this.$emit('change', this.dynamicTags);
+      this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1)
+      this.$emit('change', this.dynamicTags)
     },
     showInput() {
-      this.inputVisible = true;
+      this.inputVisible = true
       this.$nextTick(() => {
-        this.$refs.saveTagInput.$refs.input.focus();
-      });
+        this.$refs.saveTagInput.$refs.input.focus()
+      })
     },
 
     handleInputConfirm() {
-      let inputValue = this.inputValue;
+      let inputValue = this.inputValue
       if (inputValue) {
-        this.dynamicTags.push(inputValue);
-        this.$emit('change', this.dynamicTags);
+        this.dynamicTags.push(inputValue)
+        this.$emit('change', this.dynamicTags)
       }
-      this.inputVisible = false;
-      this.inputValue = '';
+      this.inputVisible = false
+      this.inputValue = ''
     },
     onInput(evt) {
-      this.$emit('input', evt.target.value);
-    }
+      this.$emit('input', evt.target.value)
+    },
   },
   created() {
     this.$watch(
       'value',
-      newVal => {
-        this.dynamicTags = [...newVal];
+      (newVal) => {
+        this.dynamicTags = [...newVal]
       },
       { immediate: true }
-    );
-  }
-};
+    )
+  },
+}
 </script>
 <style scoped>
-  .tags-input__wrapper {
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .tags-input__wrapper input{
-    width: auto;
-  }
+.tags-input__wrapper {
+  flex-wrap: wrap;
+  align-items: center;
+}
+.tags-input__wrapper input {
+  width: auto;
+}
 </style>
 <style lang="scss">
-  @import "~@/assets/sass/custom/variables";
-  .form-group.is-invalid {
-    .tags-input__wrapper {
-      border: 1px solid $warning;
-      border-radius: $border-radius;
-    }
+@import '~@/assets/sass/custom/variables';
+.form-group.is-invalid {
+  .tags-input__wrapper {
+    border: 1px solid $warning;
+    border-radius: $border-radius;
   }
+}
 </style>

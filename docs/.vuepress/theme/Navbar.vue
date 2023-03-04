@@ -128,13 +128,13 @@
   </header>
 </template>
 <script>
-import SearchBox from "../../node_modules/vuepress/lib/default-theme/SearchBox.vue";
+import SearchBox from '../../node_modules/vuepress/lib/default-theme/SearchBox.vue'
 
 export default {
   components: {
     SearchBox,
   },
-};
+}
 </script>
 <style lang="scss">
 header.main-nav {

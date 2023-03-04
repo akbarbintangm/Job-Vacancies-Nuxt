@@ -1,18 +1,16 @@
-
 .form-group .el-select {
   width: 100%;
 }
 .el-select {
-
   .el-input .el-input__inner {
     font-size: $input-btn-font-size;
     width: 100%;
     height: $input-height;
     @include transition($transition-ease-in-out);
 
-    &:focus{
-      border-color: darken(theme-color("primary"), 10%) !important;
-      border: $input-border-width solid darken(theme-color("primary"), 12%);
+    &:focus {
+      border-color: darken(theme-color('primary'), 10%) !important;
+      border: $input-border-width solid darken(theme-color('primary'), 12%);
     }
 
     &::placeholder {
@@ -28,16 +26,14 @@
 
   .el-input.is-focus {
     .el-input__inner {
-      border-color: darken(theme-color("primary"), 10%) !important;
-      border: $input-border-width solid darken(theme-color("primary"), 12%);
+      border-color: darken(theme-color('primary'), 10%) !important;
+      border: $input-border-width solid darken(theme-color('primary'), 12%);
     }
   }
-
 }
 
 .el-select-dropdown.el-popper,
 .el-select-dropdown.el-popper.is-multiple {
-
   .el-select-dropdown__item.selected {
     color: theme-color('primary');
   }
@@ -51,9 +47,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .625rem .625rem .5rem;
+  padding: 0.625rem 0.625rem 0.5rem;
   height: 25px;
-  margin: .125rem;
+  margin: 0.125rem;
   border-radius: $input-border-radius;
   background: $tag-bg;
   color: $tag-color;

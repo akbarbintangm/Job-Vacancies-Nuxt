@@ -69,48 +69,48 @@
   </div>
 </template>
 <script>
-import ValidationError from "~/components/ValidationError.vue";
-import formMixin from "@/mixins/form-mixin";
+import ValidationError from '~/components/ValidationError.vue'
+import formMixin from '@/mixins/form-mixin'
 export default {
-  layout: "AuthLayout",
+  layout: 'AuthLayout',
   mixins: [formMixin],
   components: { ValidationError },
-  auth: "guest",
+  auth: 'guest',
 
   data() {
     return {
       form: {
         data: {
-          type: "password-reset",
+          type: 'password-reset',
           attributes: {
-            password: "",
-            password_confirmation: "",
-            token: "",
-            email: "",
+            password: '',
+            password_confirmation: '',
+            token: '',
+            email: '',
           },
         },
       },
-    };
+    }
   },
   mounted() {
-    this.form.data.attributes.email = this.$route.query.email;
-    this.form.data.attributes.token = this.$route.query.token;
+    this.form.data.attributes.email = this.$route.query.email
+    this.form.data.attributes.token = this.$route.query.token
   },
   beforeDestroy() {
-    this.$router.replace({ query: null });
+    this.$router.replace({ query: null })
   },
   methods: {
     async handleSubmit() {
       try {
-        await this.$store.dispatch("reset/createNewPassword", this.form.data);
+        await this.$store.dispatch('reset/createNewPassword', this.form.data)
       } catch (error) {
         await this.$notify({
-          type: "danger",
-          message: "The given data was invalid.",
-        });
-        this.setApiValidation(error.response.data.errors);
+          type: 'danger',
+          message: 'The given data was invalid.',
+        })
+        this.setApiValidation(error.response.data.errors)
       }
     },
   },
-};
+}
 </script>

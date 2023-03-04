@@ -23,23 +23,23 @@
 export default {
   name: 'icon-checkbox',
   model: {
-    prop: 'checked'
+    prop: 'checked',
   },
   props: {
     checked: {
       type: Boolean,
-      default: false
+      default: false,
     },
     name: String,
     title: String,
     icon: String,
-    disabled: Boolean
+    disabled: Boolean,
   },
   methods: {
     updateValue() {
-      this.$emit('input', !this.checked);
-    }
-  }
-};
+      this.$emit('input', !this.checked)
+    },
+  },
+}
 </script>
 <style></style>

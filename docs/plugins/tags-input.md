@@ -6,7 +6,6 @@ Manage tags effortlessly with our tags input
 
 Simple, yet powerful tags input component
 
-
 Initialization:
 
 ```js
@@ -14,29 +13,30 @@ import TagsInput from '@/components/Inputs/TagsInput'
 
 export default {
   components: {
-    TagsInput
-  }
+    TagsInput,
+  },
 }
 ```
 
 ### Example (single file with preview)
 
 :::demo
+
 ```html
 <template>
   <tags-input v-model="tags"></tags-input>
 </template>
 <script>
-export default {
-   data(){
-     return {
-       tags: ['New York', 'Boston', 'London'],
-     }
-   }
-}
+  export default {
+    data() {
+      return {
+        tags: ['New York', 'Boston', 'London'],
+      }
+    },
+  }
 </script>
-
 ```
+
 :::
 
 ### TagsInput props
@@ -57,4 +57,4 @@ export default {
 .tags-input__wrapper input {
   margin-top: 0 !important;
 }
-</style> 
+</style>

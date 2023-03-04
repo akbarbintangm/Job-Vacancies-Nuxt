@@ -130,7 +130,7 @@
   </div>
 </template>
 <script>
-import { BasePagination } from "@/components/argon-core";
+import { BasePagination } from '@/components/argon-core'
 import {
   Table,
   TableColumn,
@@ -141,10 +141,10 @@ import {
   Select,
   Option,
   Button,
-} from "element-ui";
+} from 'element-ui'
 
 export default {
-  layout: "DashboardLayout",
+  layout: 'DashboardLayout',
 
   components: {
     BasePagination,
@@ -163,7 +163,7 @@ export default {
     return {
       selectedRows: [],
       users: [],
-      sort: "created_at",
+      sort: 'created_at',
 
       pagination: {
         perPage: 5,
@@ -172,52 +172,52 @@ export default {
       },
 
       total: 1,
-    };
+    }
   },
   computed: {
     from() {
-      return this.pagination.perPage * (this.pagination.currentPage - 1);
+      return this.pagination.perPage * (this.pagination.currentPage - 1)
     },
 
     to() {
-      let highBound = this.from + this.pagination.perPage;
+      let highBound = this.from + this.pagination.perPage
       if (this.total < highBound) {
-        highBound = this.total;
+        highBound = this.total
       }
-      return highBound;
+      return highBound
     },
   },
 
   created() {
-    this.getList();
+    this.getList()
   },
 
   methods: {
     getList() {
       this.users = [
         {
-          name: "Admin",
-          email: "admin@jsonapi.com",
-          created_at: "2020-01-01",
+          name: 'Admin',
+          email: 'admin@jsonapi.com',
+          created_at: '2020-01-01',
         },
-      ];
+      ]
     },
     onProFeature() {
       this.$notify({
-        type: "danger",
-        message: "This is a PRO feature.",
-      });
+        type: 'danger',
+        message: 'This is a PRO feature.',
+      })
     },
     sortChange({ prop, order }) {
-      if (order === "descending") {
-        this.sort = `-${prop}`;
+      if (order === 'descending') {
+        this.sort = `-${prop}`
       } else {
-        this.sort = `${prop}`;
+        this.sort = `${prop}`
       }
-      this.getList();
+      this.getList()
     },
   },
-};
+}
 </script>
 <style>
 #pro-feature {

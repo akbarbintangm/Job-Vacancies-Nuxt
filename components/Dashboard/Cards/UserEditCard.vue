@@ -33,13 +33,13 @@
   </div>
 </template>
 <script>
-import BaseInput from "~/components/argon-core/Inputs/BaseInput.vue";
-import BaseButton from "~/components/argon-core/BaseButton.vue";
-import formMixin from "@/mixins/form-mixin";
-import ValidationError from "~/components/ValidationError.vue";
+import BaseInput from '~/components/argon-core/Inputs/BaseInput.vue'
+import BaseButton from '~/components/argon-core/BaseButton.vue'
+import formMixin from '@/mixins/form-mixin'
+import ValidationError from '~/components/ValidationError.vue'
 
 export default {
-  name: "UserEditCard",
+  name: 'UserEditCard',
 
   components: {
     BaseInput,
@@ -55,30 +55,30 @@ export default {
 
   methods: {
     async handleProfileUpdate() {
-      if (["1"].includes(this.user.id)) {
+      if (['1'].includes(this.user.id)) {
         await this.$notify({
-          type: "danger",
-          message: "You are not allowed not change data of default users.",
-        });
-        return;
+          type: 'danger',
+          message: 'You are not allowed not change data of default users.',
+        })
+        return
       }
       try {
-        await this.$store.dispatch("profile/update", this.user);
-        this.unsetApiValidationErrors();
+        await this.$store.dispatch('profile/update', this.user)
+        this.unsetApiValidationErrors()
 
         this.$notify({
-          type: "success",
-          message: "Profile updated successfully.",
-        });
-        await this.$store.getters["profile/me"];
+          type: 'success',
+          message: 'Profile updated successfully.',
+        })
+        await this.$store.getters['profile/me']
       } catch (error) {
         this.$notify({
-          type: "danger",
-          message: "Oops, something went wrong!",
-        });
-        this.setApiValidation(error.response.data.errors);
+          type: 'danger',
+          message: 'Oops, something went wrong!',
+        })
+        this.setApiValidation(error.response.data.errors)
       }
     },
   },
-};
+}
 </script>

@@ -9,8 +9,7 @@
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
               <h1 class="text-white">Create an account</h1>
               <p class="text-lead text-white">
-                Use these awesome forms to login or create new account in your
-                project for free.
+                Register to Login into Job Vacancies Management Website.
               </p>
             </div>
           </div>
@@ -38,7 +37,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8">
           <div class="card bg-secondary border-0">
-            <div class="card-header bg-transparent pb-5">
+            <!-- <div class="card-header bg-transparent pb-5">
               <div class="text-muted text-center mt-2 mb-4">
                 <small>Sign up with</small>
               </div>
@@ -56,7 +55,7 @@
                   <span class="btn-inner--text">Google</span>
                 </a>
               </div>
-            </div>
+            </div> -->
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
                 <small>Or sign up with credentials</small>
@@ -188,66 +187,66 @@
   </div>
 </template>
 <script>
-import ValidationError from "~/components/ValidationError.vue";
-import formMixin from "@/mixins/form-mixin";
+import ValidationError from '~/components/ValidationError.vue'
+import formMixin from '@/mixins/form-mixin'
 import Password from 'vue-password-strength-meter'
 import BaseCheckbox from '~/components/argon-core/Inputs/BaseCheckbox.vue'
 
-  export default {
-    layout: 'AuthLayout',
-    name: 'register',
-    mixins: [formMixin],
-    components: { ValidationError, Password, BaseCheckbox  },
-    auth: "guest",
+export default {
+  layout: 'AuthLayout',
+  name: 'register',
+  mixins: [formMixin],
+  components: { ValidationError, Password, BaseCheckbox },
+  auth: 'guest',
 
   data() {
     return {
       form: {
         data: {
-          type: "token",
+          type: 'token',
           attributes: {
-            name: "",
-            email: "",
-            password: "",
-            password_confirmation: "",
+            name: '',
+            email: '',
+            password: '',
+            password_confirmation: '',
             agree: false,
-            scors: "",
+            scors: '',
           },
         },
       },
-    };
+    }
   },
   methods: {
     showScore(score) {
-      this.form.data.attributes.scors = score;
+      this.form.data.attributes.scors = score
     },
     async handleRegister() {
       if (!this.form.data.attributes.agree) {
         this.$notify({
-          type: "danger",
-          message: "You need to agree with our terms and conditions.",
-        });
-        return;
+          type: 'danger',
+          message: 'You need to agree with our terms and conditions.',
+        })
+        return
       }
 
       try {
-        await this.$store.dispatch("register/create", this.form.data);
+        await this.$store.dispatch('register/create', this.form.data)
 
         //log in the user after successful register
-        await this.$auth.loginWith("local", {
+        await this.$auth.loginWith('local', {
           data: this.form,
-        });
-        this.$router.push("/dashboard");
+        })
+        this.$router.push('/dashboard')
       } catch (error) {
-        this.setApiValidation(error.response.data.errors);
+        this.setApiValidation(error.response.data.errors)
 
         this.$notify({
-          type: "danger",
-          message: "Oops, something went wrong!",
-        });
+          type: 'danger',
+          message: 'Oops, something went wrong!',
+        })
       }
     },
   },
-};
+}
 </script>
 <style></style>

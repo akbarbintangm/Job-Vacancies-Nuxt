@@ -2,7 +2,7 @@
   <div class="wrapper">
     <notifications></notifications>
     <side-bar>
-      <template slot-scope="props" slot="links">
+      <template slot="links">
         <sidebar-item
           :link="{
             name: 'Dashboard',
@@ -31,32 +31,32 @@
             }"
           />
         </sidebar-item>
-        <sidebar-item
+        <!-- <sidebar-item
           :link="{
             name: 'Icons',
             path: '/components/icons',
             icon: 'ni ni-planet',
           }"
-        />
+        /> -->
         <sidebar-item
           :link="{
-            name: 'Tables',
+            name: 'Job Management',
             icon: 'ni ni-align-left-2 text-default',
-            path: '/tables/regular',
+            path: '/tables/jobs',
           }"
         >
         </sidebar-item>
 
-        <sidebar-item
+        <!-- <sidebar-item
           :link="{
             name: 'Google',
             icon: 'ni ni-pin-3',
             path: '/maps/google',
           }"
         >
-        </sidebar-item>
+        </sidebar-item> -->
 
-        <hr
+        <!-- <hr
           class="my-3"
           style="
             border: 0;
@@ -66,9 +66,9 @@
             box-sizing: content-box;
             height: 0;
           "
-        />
+        /> -->
 
-        <a
+        <!-- <a
           href="https://www.creative-tim.com/product/nuxt-argon-dashboard-pro-laravel"
           target="_blank"
           class="btn btn-danger btn-icon ml-sm-3 d-md-block mb-2 mt-1 mr-3"
@@ -104,7 +104,7 @@
             ><i class="fab fa-github mr-2"></i
           ></span>
           <span class="nav-link-inner--text">Star us on Github</span></a
-        >
+        > -->
       </template>
     </side-bar>
     <div class="main-content">
@@ -121,28 +121,28 @@
 </template>
 <script>
 /* eslint-disable no-new */
-import PerfectScrollbar from "perfect-scrollbar";
-import "perfect-scrollbar/css/perfect-scrollbar.css";
+import PerfectScrollbar from 'perfect-scrollbar'
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
 
 function hasElement(className) {
-  return document.getElementsByClassName(className).length > 0;
+  return document.getElementsByClassName(className).length > 0
 }
 
 function initScrollbar(className) {
   if (hasElement(className)) {
-    new PerfectScrollbar(`.${className}`);
+    new PerfectScrollbar(`.${className}`)
   } else {
     // try to init it later in case this component is loaded async
     setTimeout(() => {
-      initScrollbar(className);
-    }, 100);
+      initScrollbar(className)
+    }, 100)
   }
 }
 
-import DashboardNavbar from "~/components/layouts/argon/DashboardNavbar.vue";
-import ContentFooter from "~/components/layouts/argon/ContentFooter.vue";
-import DashboardContent from "~/components/layouts/argon/Content.vue";
-import Vuex from "vuex";
+import DashboardNavbar from '~/components/layouts/argon/DashboardNavbar.vue'
+import ContentFooter from '~/components/layouts/argon/ContentFooter.vue'
+import DashboardContent from '~/components/layouts/argon/Content.vue'
+import Vuex from 'vuex'
 
 export default {
   components: {
@@ -152,16 +152,15 @@ export default {
   },
   methods: {
     initScrollbar() {
-      let isWindows = navigator.platform.startsWith("Win");
+      let isWindows = navigator.platform.startsWith('Win')
       if (isWindows) {
-        initScrollbar("scrollbar-inner");
+        initScrollbar('scrollbar-inner')
       }
     },
   },
   mounted() {
-    this.initScrollbar(), this.$store.dispatch("profile/me");
+    this.initScrollbar(), this.$store.dispatch('profile/me')
   },
-};
+}
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

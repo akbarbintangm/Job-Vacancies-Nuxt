@@ -4,7 +4,7 @@ export const Forms = {
   data() {
     return {
       isLoading: false,
-      apiValidationErrors: {}
+      apiValidationErrors: {},
     }
   },
   methods: {
@@ -22,7 +22,7 @@ export const Forms = {
 
           return {
             ...accumulator,
-            [errorFieldName]: errorDetail
+            [errorFieldName]: errorDetail,
           }
         },
         {}
@@ -61,7 +61,7 @@ export const Forms = {
           relationshipIds = Object.values(relationships).map((i) => i.id)
           newData = omit(newData, [
             ...Object.keys(relationships),
-            'relationshipNames'
+            'relationshipNames',
           ])
         }
 
@@ -72,6 +72,6 @@ export const Forms = {
       }
 
       return !isEqual(oldData, newData)
-    }
-  }
+    },
+  },
 }

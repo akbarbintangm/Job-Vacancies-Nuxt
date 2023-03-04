@@ -10,14 +10,13 @@ over one of the most popular open source datepickers [Flatpickr](https://flatpic
 Initialization:
 
 ```js
-import flatPicker from "vue-flatpickr-component";
-import "flatpickr/dist/flatpickr.css";
+import flatPicker from 'vue-flatpickr-component'
+import 'flatpickr/dist/flatpickr.css'
 
 export default {
-  components: {flatPicker}
+  components: { flatPicker },
 }
 ```
-
 
 Flatpickr can be used in combination with our `base-input` in order to achieve the same look
 as other form inputs.
@@ -25,57 +24,64 @@ as other form inputs.
 ### Example
 
 :::demo
+
 ```html
 <base-input addon-left-icon="ni ni-calendar-grid-58">
-    <flat-picker slot-scope="{focus, blur}"
-                 @on-open="focus"
-                 @on-close="blur"
-                 :config="{allowInput: true}"
-                 class="form-control datepicker"
-                 v-model="dates.simple">
-    </flat-picker>
+  <flat-picker
+    slot-scope="{focus, blur}"
+    @on-open="focus"
+    @on-close="blur"
+    :config="{allowInput: true}"
+    class="form-control datepicker"
+    v-model="dates.simple"
+  >
+  </flat-picker>
 </base-input>
 <script>
-    export default {
-      data() {
-        return {
-          dates: {
-            simple: "2018-07-17"
-          }
-        };
+  export default {
+    data() {
+      return {
+        dates: {
+          simple: '2018-07-17',
+        },
       }
-    };
+    },
+  }
 </script>
 ```
+
 :::
 
 ### Range
 
 :::demo
+
 ```html
 <base-input addon-left-icon="ni ni-calendar-grid-58">
-    <flat-picker slot-scope="{focus, blur}"
-                 @on-open="focus"
-                 @on-close="blur"
-                 :config="{allowInput: true, mode: 'range'}"
-                 class="form-control datepicker"
-                 v-model="dates.range">
-    </flat-picker>
+  <flat-picker
+    slot-scope="{focus, blur}"
+    @on-open="focus"
+    @on-close="blur"
+    :config="{allowInput: true, mode: 'range'}"
+    class="form-control datepicker"
+    v-model="dates.range"
+  >
+  </flat-picker>
 </base-input>
 <script>
-    export default {
-      data() {
-        return {
-          dates: {
-            range: "2018-07-17 to 2018-07-19"
-          }
-        };
+  export default {
+    data() {
+      return {
+        dates: {
+          range: '2018-07-17 to 2018-07-19',
+        },
       }
-    };
+    },
+  }
 </script>
 ```
-:::
 
+:::
 
 ### Props
 

@@ -1,5 +1,3 @@
-
-
 .el-table .el-table__header-wrapper {
   thead th {
     padding-top: 0;
@@ -18,7 +16,7 @@
     top: 7px;
   }
   .ascending .sort-caret.ascending {
-    border-bottom-color: theme-color("default");
+    border-bottom-color: theme-color('default');
   }
 
   .sort-caret.descending {
@@ -26,7 +24,7 @@
   }
 
   .descending .sort-caret.descending {
-    border-top-color: theme-color("default");
+    border-top-color: theme-color('default');
   }
 }
 
@@ -53,12 +51,12 @@ div.el-table {
       background: transparent;
     }
   }
-  &.el-table--enable-row-hover .el-table__body tr:hover>td {
+  &.el-table--enable-row-hover .el-table__body tr:hover > td {
     background: transparent;
   }
 
   .el-table__row .cell,
-  .el-table__header .cell{
+  .el-table__header .cell {
     padding: 0;
   }
 }

@@ -7,6 +7,7 @@ Documentation and examples for Bootstrap’s powerful, responsive navigation hea
 ### Examples
 
 :::demo
+
 ```html
 <div>
   <el-tooltip content="Tooltip on left" placement="left">
@@ -14,28 +15,28 @@ Documentation and examples for Bootstrap’s powerful, responsive navigation hea
       On left
     </base-button>
   </el-tooltip>
-  
-   <el-tooltip content="Tooltip on top" placement="top">
+
+  <el-tooltip content="Tooltip on top" placement="top">
     <base-button size="sm" type="primary" class="btn-tooltip">
       On top
     </base-button>
   </el-tooltip>
-    
-   <el-tooltip content="Tooltip on bottom" placement="bottom">
+
+  <el-tooltip content="Tooltip on bottom" placement="bottom">
     <base-button size="sm" type="primary" class="btn-tooltip">
       On bottom
     </base-button>
-  </el-tooltip>  
- 
+  </el-tooltip>
+
   <el-tooltip content="Tooltip on right" placement="right">
-     <base-button size="sm" type="primary" class="btn-tooltip">
-       On right
-     </base-button>
-   </el-tooltip>
+    <base-button size="sm" type="primary" class="btn-tooltip">
+      On right
+    </base-button>
+  </el-tooltip>
 </div>
 ```
-:::
 
+:::
 
 ### Props
 

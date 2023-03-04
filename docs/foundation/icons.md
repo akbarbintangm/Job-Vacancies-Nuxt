@@ -37,7 +37,6 @@ You need to know two bits of information to reference an icon:
 
 #### Icons
 
-
 <div class="row icon-examples mb-4">
           <div class="col-lg-3">
             <button type="button" class="btn-icon-clipboard" data-clipboard-text="active-40" title="" data-original-title="Copy to clipboard">
@@ -860,7 +859,6 @@ Again, it's imported inside `public/index.html` file
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 ```
 
-
 #### Initialization
 
 Start placing icons in your HTML’s `<body>`.
@@ -879,7 +877,6 @@ You need to know two bits of information to reference an icon:
 ```html
 <i class="fa fa-bicycle"></i>
 ```
-
 
 #### Icons
 

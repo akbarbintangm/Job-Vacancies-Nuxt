@@ -15,14 +15,14 @@ As many packages are deprecated on Node.js v16.x or higher make sure you are usi
 3. Create a new .env file: `cp .env.example .env`
 4. `BASE_URL` should contain the URL of your Nuxt Argon Dashboard Project (eg. http://localhost:8080/)
 5. `API_BASE_URL` should contain the URL of your Laravel JSON:API Project. (eg. http://localhost:3000/api/v1)
-6. Run `npm run dev` to start the application in a local development environment or `npm run build`  to build release distributables.
+6. Run `npm run dev` to start the application in a local development environment or `npm run build` to build release distributables.
 
 #### Argon Dashboard
 
 Argon Dashboard is built as Nuxt plugin so you can simply use it in your nuxt.config.js file
 
 ```js
-plugins: ["~/plugins/dashboard/dashboard-plugin"];
+plugins: ['~/plugins/dashboard/dashboard-plugin']
 ```
 
 #### Global Components

@@ -1,20 +1,20 @@
 export const actions = {
   async forgotPassword({ commit }, data) {
-    await this.$axios.post("password-forgot", { data });
+    await this.$axios.post('password-forgot', { data })
   },
   async createNewPassword({ commit }, data) {
-    await this.$axios.post("password-reset", { data });
+    await this.$axios.post('password-reset', { data })
 
     const loginData = {
       data: {
-        type: "token",
+        type: 'token',
         attributes: {
           email: data.attributes.email,
-          password: data.attributes.password
-        }
-      }
-    };
+          password: data.attributes.password,
+        },
+      },
+    }
 
-    this.$auth.loginWith("local", { data: loginData });
-  }
-};
+    this.$auth.loginWith('local', { data: loginData })
+  },
+}

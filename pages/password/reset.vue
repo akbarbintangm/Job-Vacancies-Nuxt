@@ -58,49 +58,49 @@
   </div>
 </template>
 <script>
-import ValidationError from "~/components/ValidationError.vue";
-import formMixin from "@/mixins/form-mixin";
+import ValidationError from '~/components/ValidationError.vue'
+import formMixin from '@/mixins/form-mixin'
 export default {
-  layout: "AuthLayout",
+  layout: 'AuthLayout',
   mixins: [formMixin],
   components: { ValidationError },
-  auth: "guest",
+  auth: 'guest',
   data() {
     return {
       form: {
         data: {
-          type: "password-forgot",
+          type: 'password-forgot',
           attributes: {
-            email: "",
-            redirect_url: process.env.baseUrl + "/password/email",
+            email: '',
+            redirect_url: process.env.baseUrl + '/password/email',
           },
         },
       },
-    };
+    }
   },
   methods: {
     async handleSubmit() {
       if (this.$isDemo == 1) {
         await this.$notify({
-          type: "danger",
-          message: "Password reset is disabled in the demo.",
-        });
-        return;
+          type: 'danger',
+          message: 'Password reset is disabled in the demo.',
+        })
+        return
       }
       try {
-        await this.$store.dispatch("reset/forgotPassword", this.form.data);
+        await this.$store.dispatch('reset/forgotPassword', this.form.data)
         await this.$notify({
-          type: "success",
-          message: "An email with reset password link was sent.",
-        });
+          type: 'success',
+          message: 'An email with reset password link was sent.',
+        })
       } catch (error) {
         await this.$notify({
-          type: "danger",
+          type: 'danger',
           message: "We can't find a user with that e-mail address.",
-        });
-        this.setApiValidation(error.response.data.errors);
+        })
+        this.setApiValidation(error.response.data.errors)
       }
     },
   },
-};
+}
 </script>

@@ -12,8 +12,8 @@ It’s built with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS
 **New to or unfamiliar with flexbox?** [Read this CSS Tricks flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background)
 for background, terminology, guidelines, and code snippets.
 
-
 :::demo
+
 ```html
 <div class="container ct-example-row">
   <div class="row">
@@ -29,6 +29,7 @@ for background, terminology, guidelines, and code snippets.
   </div>
 </div>
 ```
+
 :::
 
 The above example creates three equal-width columns on small, medium, large,
@@ -129,6 +130,7 @@ For example, here are two grid layouts that apply to every device and viewport, 
 Add any number of unit-less classes for each breakpoint you need and every column will be the same width.
 
 :::demo
+
 ```html
 <div class="container ct-example-row">
   <div class="row">
@@ -152,6 +154,7 @@ Add any number of unit-less classes for each breakpoint you need and every colum
   </div>
 </div>
 ```
+
 :::
 
 <hr>
@@ -161,6 +164,7 @@ that prevented this from working without an explicit `flex-basis` or `border`.
 There are workarounds for older browser versions, but they shouldn’t be necessary if you’re up-to-date.
 
 :::demo
+
 ```html
 <div class="container ct-example-row">
   <div class="row">
@@ -172,14 +176,15 @@ There are workarounds for older browser versions, but they shouldn’t be necess
   </div>
 </div>
 ```
-:::
 
+:::
 
 #### Setting one column width
 
 Auto-layout for flexbox grid columns also means you can set the width of one column and have the sibling columns automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.
 
 :::demo
+
 ```html
 <div class="container ct-example-row">
   <div class="row">
@@ -206,6 +211,7 @@ Auto-layout for flexbox grid columns also means you can set the width of one col
   </div>
 </div>
 ```
+
 :::
 
 #### Variable width content
@@ -213,6 +219,7 @@ Auto-layout for flexbox grid columns also means you can set the width of one col
 Use `col-{breakpoint}-auto` classes to size columns based on the natural width of their content.
 
 :::demo
+
 ```html
 <div class="container ct-example-row">
   <div class="row justify-content-md-center">
@@ -239,6 +246,7 @@ Use `col-{breakpoint}-auto` classes to size columns based on the natural width o
   </div>
 </div>
 ```
+
 :::
 
 #### Equal-width multi-row
@@ -247,6 +255,7 @@ Create equal-width columns that span multiple rows by inserting a `.w-100` where
 Make the breaks responsive by mixing the `.w-100` with some responsive display utilities.
 
 :::demo
+
 ```html
 <div class="row ct-example-row">
   <div class="col"><span>col</span></div>
@@ -256,6 +265,7 @@ Make the breaks responsive by mixing the `.w-100` with some responsive display u
   <div class="col"><span>col</span></div>
 </div>
 ```
+
 :::
 
 #### Responsive classes
@@ -268,20 +278,22 @@ For grids that are the same from the smallest of devices to the largest, use the
 Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to `.col`.
 
 :::demo
+
 ```html
 <div class="ct-example-row">
-    <div class="row">
-      <div class="col"><span>col</span></div>
-      <div class="col"><span>col</span></div>
-      <div class="col"><span>col</span></div>
-      <div class="col"><span>col</span></div>
-    </div>
-    <div class="row">
-      <div class="col-8"><span>col-8</span></div>
-      <div class="col-4"><span>col-4</span></div>
-    </div>
+  <div class="row">
+    <div class="col"><span>col</span></div>
+    <div class="col"><span>col</span></div>
+    <div class="col"><span>col</span></div>
+    <div class="col"><span>col</span></div>
+  </div>
+  <div class="row">
+    <div class="col-8"><span>col-8</span></div>
+    <div class="col-4"><span>col-4</span></div>
+  </div>
 </div>
 ```
+
 :::
 
 #### Stacked to horizontal
@@ -290,48 +302,50 @@ Using a single set of `.col-sm-*` classes, you can create a basic grid system th
 horizontal at the small breakpoint (`sm`).
 
 :::demo
+
 ```html
 <div class="ct-example-row">
-    <div class="row">
-      <div class="col-sm-8"><span>col-sm-8</span></div>
-      <div class="col-sm-4"><span>col-sm-4</span></div>
-    </div>
-    <div class="row">
-      <div class="col-sm"><span>col-sm</span></div>
-      <div class="col-sm"><span>col-sm</span></div>
-      <div class="col-sm"><span>col-sm</span></div>
-    </div>
+  <div class="row">
+    <div class="col-sm-8"><span>col-sm-8</span></div>
+    <div class="col-sm-4"><span>col-sm-4</span></div>
+  </div>
+  <div class="row">
+    <div class="col-sm"><span>col-sm</span></div>
+    <div class="col-sm"><span>col-sm</span></div>
+    <div class="col-sm"><span>col-sm</span></div>
+  </div>
 </div>
 ```
-:::
 
+:::
 
 #### Mix and match
 
 Don’t want your columns to simply stack in some grid tiers? Use a combination of different classes for each tier as needed. See the example below for a better idea of how it all works.
 
-
 :::demo
+
 ```html
 <div class="ct-example-row">
-    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-    <div class="row">
-      <div class="col-12 col-md-8"><span>.col-12 .col-md-8</span></div>
-      <div class="col-6 col-md-4"><span>.col-6 .col-md-4</span></div>
-    </div>
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+  <div class="row">
+    <div class="col-12 col-md-8"><span>.col-12 .col-md-8</span></div>
+    <div class="col-6 col-md-4"><span>.col-6 .col-md-4</span></div>
+  </div>
 
-    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-    <div class="row">
-      <div class="col-6 col-md-4"><span>.col-6 .col-md-4</span></div>
-      <div class="col-6 col-md-4"><span>.col-6 .col-md-4</span></div>
-      <div class="col-6 col-md-4"><span>.col-6 .col-md-4</span></div>
-    </div>
+  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+  <div class="row">
+    <div class="col-6 col-md-4"><span>.col-6 .col-md-4</span></div>
+    <div class="col-6 col-md-4"><span>.col-6 .col-md-4</span></div>
+    <div class="col-6 col-md-4"><span>.col-6 .col-md-4</span></div>
+  </div>
 
-    <!-- Columns are always 50% wide, on mobile and desktop -->
-    <div class="row">
-      <div class="col-6"><span>.col-6</span></div>
-      <div class="col-6"><span>.col-6</span></div>
-    </div>
+  <!-- Columns are always 50% wide, on mobile and desktop -->
+  <div class="row">
+    <div class="col-6"><span>.col-6</span></div>
+    <div class="col-6"><span>.col-6</span></div>
+  </div>
 </div>
 ```
+
 :::

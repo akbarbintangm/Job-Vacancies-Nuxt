@@ -21,7 +21,7 @@ export default function getComponents() {
 
   components = {
     ...baseComponents,
-    ...otherComponents
+    ...otherComponents,
   }
 
   return components
@@ -35,7 +35,7 @@ function loadComponentFolder(requireComponent, components) {
     const componentName = upperFirst(
       camelCase(
         fileName
-        // Remove the "./_" from the beginning
+          // Remove the "./_" from the beginning
           .replace(/^\.\/_/, '')
           // Remove the file extension from the end
           .replace(/\.\w+$/, '')
@@ -49,8 +49,11 @@ function loadComponentFolder(requireComponent, components) {
 
 function loadComponents() {
   let components = {}
-  const componentsFolderContext = require.context('../../components/argon-core', true)
+  const componentsFolderContext = require.context(
+    '../../components/argon-core',
+    true
+  )
 
-  loadComponentFolder(componentsFolderContext, components);
+  loadComponentFolder(componentsFolderContext, components)
   return components
 }

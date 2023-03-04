@@ -268,10 +268,10 @@
   </base-nav>
 </template>
 <script>
-import { CollapseTransition } from "vue2-transitions";
-import BaseNav from "@/components/argon-core/Navbar/BaseNav.vue";
-import Modal from "@/components/argon-core/Modal.vue";
-import { pick, merge } from "lodash";
+import { CollapseTransition } from 'vue2-transitions'
+import BaseNav from '@/components/argon-core/Navbar/BaseNav.vue'
+import Modal from '@/components/argon-core/Modal.vue'
+import { pick, merge } from 'lodash'
 
 export default {
   components: {
@@ -282,20 +282,20 @@ export default {
   props: {
     type: {
       type: String,
-      default: "default", // default|light
+      default: 'default', // default|light
       description:
-        "Look of the dashboard navbar. Default (Green) or light (gray)",
+        'Look of the dashboard navbar. Default (Green) or light (gray)',
     },
   },
   computed: {
     routeName() {
-      const { name } = this.$route;
-      return this.capitalizeFirstLetter(name);
+      const { name } = this.$route
+      return this.capitalizeFirstLetter(name)
     },
     profileImage() {
       return this.$auth.user.profile_image
         ? this.$auth.user.profile_image
-        : "/img/placeholder.jpg";
+        : '/img/placeholder.jpg'
     },
   },
   data() {
@@ -303,32 +303,32 @@ export default {
       activeNotifications: false,
       showMenu: false,
       searchModalVisible: false,
-      searchQuery: "",
-    };
+      searchQuery: '',
+    }
   },
   methods: {
     capitalizeFirstLetter(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
+      return string.charAt(0).toUpperCase() + string.slice(1)
     },
     toggleNotificationDropDown() {
-      this.activeNotifications = !this.activeNotifications;
+      this.activeNotifications = !this.activeNotifications
     },
     closeDropDown() {
-      this.activeNotifications = false;
+      this.activeNotifications = false
     },
     toggleSidebar() {
-      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
+      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar)
     },
     hideSidebar() {
-      this.$sidebar.displaySidebar(false);
+      this.$sidebar.displaySidebar(false)
     },
     async logout() {
       try {
-        await this.$auth.logout();
+        await this.$auth.logout()
       } catch (error) {
-        this.$toast.error(error.response.message);
+        this.$toast.error(error.response.message)
       }
     },
   },
-};
+}
 </script>

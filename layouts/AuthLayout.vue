@@ -36,11 +36,11 @@
         </div>
 
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <nuxt-link to="/dashboard" class="nav-link">
               <span class="nav-link-inner--text">Dashboard</span>
             </nuxt-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <nuxt-link to="/login" class="nav-link">
               <span class="nav-link-inner--text">Login</span>
@@ -53,7 +53,7 @@
           </li>
         </ul>
         <hr class="d-lg-none" />
-        <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <!-- <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item">
             <a
               class="nav-link nav-link-icon"
@@ -116,7 +116,7 @@
               <span class="nav-link-inner--text">DOWNLOAD NOW</span>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </template>
     </base-nav>
 
@@ -127,7 +127,7 @@
     <footer class="py-5" id="footer-main">
       <div class="container">
         <div class="row align-items-center justify-content-xl-between">
-          <div class="col-xl-6">
+          <!-- <div class="col-xl-6">
             <ul class="nav nav-footer">
               <li class="nav-item">
                 <a
@@ -175,9 +175,9 @@
                 >
               </li>
             </ul>
-          </div>
+          </div> -->
           <div class="col-xl-6 pr-1">
-            <div class="copyright text-center text-lg-right text-muted">
+            <!-- <div class="copyright text-center text-lg-right text-muted">
               © {{ year }}, made with <i class="fa fa-heart heart"></i> by<a
                 href="https://www.creative-tim.com"
                 class="font-weight-bold ml-1"
@@ -194,6 +194,9 @@
                 >UPDIVISION</a
               >
               for a better web.
+            </div> -->
+            <div class="copyright text-center text-lg-right text-muted">
+              © {{ year }}, Akbar Bintang M.
             </div>
           </div>
         </div>
@@ -202,7 +205,7 @@
   </div>
 </template>
 <script>
-import BaseNav from "~/components/argon-core/Navbar/BaseNav.vue";
+import BaseNav from '~/components/argon-core/Navbar/BaseNav.vue'
 
 export default {
   components: {
@@ -211,7 +214,7 @@ export default {
   props: {
     backgroundColor: {
       type: String,
-      default: "black",
+      default: 'black',
     },
   },
   data() {
@@ -219,36 +222,36 @@ export default {
       showMenu: false,
       menuTransitionDuration: 250,
       year: new Date().getFullYear(),
-      pageClass: "login-page",
-    };
+      pageClass: 'login-page',
+    }
   },
   computed: {
     title() {
-      return `${this.$route.name} Page`;
+      return `${this.$route.name} Page`
     },
     layoutClass() {
-      let exceptions = ["index", "home"];
+      let exceptions = ['index', 'home']
       if (!exceptions.includes(this.$route.name)) {
-        return "bg-default";
+        return 'bg-default'
       } else {
-        return "";
+        return ''
       }
     },
   },
   methods: {
     closeMenu() {
-      document.body.classList.remove("nav-open");
-      this.showMenu = false;
+      document.body.classList.remove('nav-open')
+      this.showMenu = false
     },
   },
   watch: {
-    "$route.path"() {
+    '$route.path'() {
       if (this.showMenu) {
-        this.closeMenu();
+        this.closeMenu()
       }
     },
   },
-};
+}
 </script>
 <style lang="scss">
 .auth-layout {

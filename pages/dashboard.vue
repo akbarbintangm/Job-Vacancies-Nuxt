@@ -9,14 +9,14 @@
           </nav>
         </div>
         <div class="col-lg-6 col-5 text-right">
-          <base-button size="sm" type="neutral">New</base-button>
-          <base-button size="sm" type="neutral">Filters</base-button>
+          <!-- <base-button size="sm" type="neutral">New</base-button>
+          <base-button size="sm" type="neutral">Filters</base-button> -->
         </div>
       </div>
 
       <!-- Card stats -->
       <div class="row">
-        <div class="col-xl-3 col-md-6">
+        <!-- <div class="col-xl-3 col-md-6">
           <stats-card
             title="Total traffic"
             type="gradient-red"
@@ -75,7 +75,7 @@
               <span class="text-nowrap">Since last month</span>
             </template>
           </stats-card>
-        </div>
+        </div> -->
       </div>
     </base-header>
 
@@ -83,7 +83,7 @@
     <div class="container-fluid mt--6">
       <div class="row">
         <div class="col-xl-8">
-          <card type="default" header-classes="bg-transparent">
+          <!-- <card type="default" header-classes="bg-transparent">
             <div slot="header" class="row align-items-center">
               <div class="col">
                 <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
@@ -123,11 +123,11 @@
               :extra-options="bigLineChart.extraOptions"
             >
             </line-chart>
-          </card>
+          </card> -->
         </div>
 
         <div class="col-xl-4">
-          <card header-classes="bg-transparent">
+          <!-- <card header-classes="bg-transparent">
             <div slot="header" class="row align-items-center">
               <div class="col">
                 <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
@@ -141,19 +141,19 @@
               :chart-data="redBarChart.chartData"
             >
             </bar-chart>
-          </card>
+          </card> -->
         </div>
       </div>
       <!-- End charts-->
 
       <!--Tables-->
       <div class="row">
-        <div class="col-xl-8">
+        <!-- <div class="col-xl-8">
           <page-visits-table></page-visits-table>
         </div>
         <div class="col-xl-4">
           <social-traffic-table></social-traffic-table>
-        </div>
+        </div> -->
       </div>
       <!--End tables-->
     </div>
@@ -161,23 +161,23 @@
 </template>
 <script>
 // Charts
-import * as chartConfigs from "@/components/argon-core/Charts/config";
-import LineChart from "@/components/argon-core/Charts/LineChart";
-import BarChart from "@/components/argon-core/Charts/BarChart";
+import * as chartConfigs from '@/components/argon-core/Charts/config'
+import LineChart from '@/components/argon-core/Charts/LineChart'
+import BarChart from '@/components/argon-core/Charts/BarChart'
 
-import RouteBreadCrumb from "@/components/argon-core/Breadcrumb/RouteBreadcrumb";
-import StatsCard from "@/components/argon-core/Cards/StatsCard";
-import SocialTrafficTable from "@/components/pages/dashboard/SocialTrafficTable.vue";
-import PageVisitsTable from "@/components/pages/dashboard/PageVisitsTable.vue";
+import RouteBreadCrumb from '@/components/argon-core/Breadcrumb/RouteBreadcrumb'
+import StatsCard from '@/components/argon-core/Cards/StatsCard'
+import SocialTrafficTable from '@/components/pages/dashboard/SocialTrafficTable.vue'
+import PageVisitsTable from '@/components/pages/dashboard/PageVisitsTable.vue'
 
 export default {
   middleware({ store, redirect }) {
     // If the user is not authenticated
     if (!store.$auth.loggedIn) {
-      return redirect("/login");
+      return redirect('/login')
     }
   },
-  layout: "DashboardLayout",
+  layout: 'DashboardLayout',
   components: {
     LineChart,
     BarChart,
@@ -197,46 +197,45 @@ export default {
         chartData: {
           datasets: [
             {
-              label: "Performance",
+              label: 'Performance',
               data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
             },
           ],
-          labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         },
         extraOptions: chartConfigs.blueChartOptions,
       },
       redBarChart: {
         chartData: {
-          labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
           datasets: [
             {
-              label: "Sales",
+              label: 'Sales',
               data: [25, 20, 30, 22, 17, 29],
             },
           ],
         },
       },
-    };
+    }
   },
   methods: {
     initBigChart(index) {
       let chartData = {
         datasets: [
           {
-            label: "Performance",
+            label: 'Performance',
             data: this.bigLineChart.allData[index],
           },
         ],
-        labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      };
-      this.bigLineChart.chartData = chartData;
-      this.bigLineChart.activeIndex = index;
+        labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      }
+      this.bigLineChart.chartData = chartData
+      this.bigLineChart.activeIndex = index
     },
   },
   mounted() {
-    this.initBigChart(0);
+    this.initBigChart(0)
   },
-};
+}
 </script>
-<style>
-</style>
+<style></style>

@@ -1,5 +1,5 @@
-import { Line, mixins } from 'vue-chartjs';
-import globalOptionsMixin from "@/components/argon-core/Charts/globalOptionsMixin";
+import { Line, mixins } from 'vue-chartjs'
+import globalOptionsMixin from '@/components/argon-core/Charts/globalOptionsMixin'
 
 export default {
   name: 'line-chart',
@@ -8,23 +8,23 @@ export default {
   props: {
     extraOptions: {
       type: Object,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   data() {
     return {
-      ctx: null
-    };
+      ctx: null,
+    }
   },
   mounted() {
     this.$watch(
       'chartData',
       (newVal, oldVal) => {
         if (!oldVal) {
-          this.renderChart(this.chartData, this.extraOptions);
+          this.renderChart(this.chartData, this.extraOptions)
         }
       },
       { immediate: true }
-    );
-  }
-};
+    )
+  },
+}
