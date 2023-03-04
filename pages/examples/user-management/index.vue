@@ -11,6 +11,7 @@
           >here</a
         >
         to see the PRO product.</strong
+
       >
     </div>
     <div>
@@ -18,6 +19,7 @@
         class="no-border-card"
         body-classes="px-0 pb-1"
         footer-classes="pb-2"
+        
       >
         <template slot="header">
           <div class="row">

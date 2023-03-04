@@ -46,6 +46,7 @@ export default {
     async getProfile() {
       await this.$store.dispatch('profile/me')
       this.user = await { ...this.$store.getters['profile/me'] }
+      
     },
   },
 }
